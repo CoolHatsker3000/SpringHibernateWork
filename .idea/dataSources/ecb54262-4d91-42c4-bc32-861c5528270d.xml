@@ -17,10 +17,11 @@
       <Position>1</Position>
       <DataType>bigint(20)|0</DataType>
       <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
     </column>
     <column id="11" parent="6" name="kind">
       <Position>2</Position>
-      <DataType>bigint(20)|0</DataType>
+      <DataType>varchar(20)|0</DataType>
     </column>
     <column id="12" parent="6" name="weight">
       <Position>3</Position>
@@ -32,7 +33,7 @@
     </column>
     <column id="14" parent="6" name="receiptDate">
       <Position>5</Position>
-      <DataType>date|0</DataType>
+      <DataType>varchar(10)|0</DataType>
     </column>
     <column id="15" parent="6" name="price">
       <Position>6</Position>
@@ -41,7 +42,6 @@
     <column id="16" parent="6" name="providerID">
       <Position>7</Position>
       <DataType>bigint(20)|0</DataType>
-      <NotNull>1</NotNull>
     </column>
     <index id="17" parent="6" name="fk_animals_providers_idx">
       <ColNames>providerID</ColNames>
@@ -51,95 +51,106 @@
       <ColNames>animalID</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="19" parent="6" name="fk_animals_providers">
+    <foreign-key id="19" parent="6" name="FKoolpkv60mi8aoy65wsrvyltvo">
       <ColNames>providerID</ColNames>
       <RefSchemaName>zoomarket</RefSchemaName>
       <RefTableName>providers</RefTableName>
       <RefColNames>ID</RefColNames>
     </foreign-key>
-    <column id="20" parent="7" name="ID">
+    <foreign-key id="20" parent="6" name="fk_animals_providers">
+      <ColNames>providerID</ColNames>
+      <RefSchemaName>zoomarket</RefSchemaName>
+      <RefTableName>providers</RefTableName>
+      <RefColNames>ID</RefColNames>
+    </foreign-key>
+    <column id="21" parent="7" name="ID">
       <Position>1</Position>
       <DataType>bigint(20)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="21" parent="7" name="name">
+    <column id="22" parent="7" name="name">
       <Position>2</Position>
       <DataType>varchar(45)|0</DataType>
     </column>
-    <column id="22" parent="7" name="price">
+    <column id="23" parent="7" name="price">
       <Position>3</Position>
       <DataType>decimal(5,2)|0</DataType>
     </column>
-    <column id="23" parent="7" name="receiptDate">
+    <column id="24" parent="7" name="receiptDate">
       <Position>4</Position>
-      <DataType>date|0</DataType>
+      <DataType>varchar(10)|0</DataType>
     </column>
-    <column id="24" parent="7" name="shelfLife">
+    <column id="25" parent="7" name="shelfLife">
       <Position>5</Position>
-      <DataType>date|0</DataType>
+      <DataType>varchar(10)|0</DataType>
     </column>
-    <column id="25" parent="7" name="providerID">
+    <column id="26" parent="7" name="providerID">
       <Position>6</Position>
       <DataType>bigint(20)|0</DataType>
-      <NotNull>1</NotNull>
     </column>
-    <index id="26" parent="7" name="fk_stuff_providers1_idx">
+    <index id="27" parent="7" name="fk_stuff_providers1_idx">
       <ColNames>providerID</ColNames>
     </index>
-    <key id="27" parent="7" name="PRIMARY">
+    <key id="28" parent="7" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="28" parent="7" name="fk_products_providers">
+    <foreign-key id="29" parent="7" name="FKg1xd8do2628hiubruiiqe1okt">
       <ColNames>providerID</ColNames>
       <RefSchemaName>zoomarket</RefSchemaName>
       <RefTableName>providers</RefTableName>
       <RefColNames>ID</RefColNames>
     </foreign-key>
-    <column id="29" parent="8" name="ID">
+    <foreign-key id="30" parent="7" name="fk_products_providers">
+      <ColNames>providerID</ColNames>
+      <RefSchemaName>zoomarket</RefSchemaName>
+      <RefTableName>providers</RefTableName>
+      <RefColNames>ID</RefColNames>
+    </foreign-key>
+    <column id="31" parent="8" name="ID">
       <Position>1</Position>
       <DataType>bigint(20)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="30" parent="8" name="name">
+    <column id="32" parent="8" name="name">
       <Position>2</Position>
       <DataType>varchar(45)|0</DataType>
     </column>
-    <column id="31" parent="8" name="webSite">
+    <column id="33" parent="8" name="webSite">
       <Position>3</Position>
       <DataType>varchar(45)|0</DataType>
     </column>
-    <column id="32" parent="8" name="phoneNumber">
+    <column id="34" parent="8" name="phoneNumber">
       <Position>4</Position>
       <DataType>varchar(45)|0</DataType>
     </column>
-    <column id="33" parent="8" name="officeAdress">
+    <column id="35" parent="8" name="officeAdress">
       <Position>5</Position>
       <DataType>varchar(45)|0</DataType>
     </column>
-    <key id="34" parent="8" name="PRIMARY">
+    <key id="36" parent="8" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="35" parent="9" name="ID">
+    <column id="37" parent="9" name="ID">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="36" parent="9" name="firstName">
+    <column id="38" parent="9" name="firstName">
       <Position>2</Position>
       <DataType>char(20)|0</DataType>
     </column>
-    <column id="37" parent="9" name="SecondName">
+    <column id="39" parent="9" name="SecondName">
       <Position>3</Position>
       <DataType>char(20)|0</DataType>
     </column>
-    <key id="38" parent="9" name="PRIMARY">
+    <key id="40" parent="9" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>

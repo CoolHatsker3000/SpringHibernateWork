@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Providers</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
+    <!--<script th:src="@{/js/jquery.min.js}"></script>
+    <script th:src="@{/js/bootstrap.min.js}"></script>-->
+</head>
+<body>
+<div class="container" style="margin-left: 150px; margin-top: 30px">
+    <a href="http://localhost:8080/addprovider" class="btn btn-success btn-block">Add new provider</a>
+</div>
+<div class="container" style="margin-top: 30px;">
+    <div>
+        <script type="text/javascript">
+            function addRow()
+            {
+                var tableAdder=document.getElementById('ProvidersTable').insertRow(1);
+                var name1=tableAdder.insertCell(0);
+                var website1=tableAdder.insertCell(1);
+                var phone1=tableAdder.insertCell(2);
+                var address1=tableAdder.insertCell(3);
+                name1.innerHTML=document.getElementById('name').value;
+                website1.innerHTML=document.getElementById('website').value;
+                phone1.innerHTML=document.getElementById('phone').value;
+                address1.innerHTML=document.getElementById('address').value;
+            }
+        </script>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-danger">
+                <div class="panel-heading"><h3>Providers</h3></div>
+                <div class="panel-body">
+                    <table id="ProvidersTable" class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th>name</th>
+                            <th>website</th>
+                            <th>Phone number</th>
+                            <th>Office adress</th>
+                            <th>Delete</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="provider:${providers}">
+                            <td th:utext="${provider.name}">...</td>
+                            <td ><a th:text="${provider.webSite}" th:href="@{'http://'+${provider.webSite}}"></a></td>
+                            <td th:utext="${provider.phoneNumber}">...</td>
+                            <td th:utext="${provider.officeAdress}">...</td>
+                            <td>
+                                <a th:href="@{/deleteProvider(providerid=${provider.id})}" class="btn btn-danger">Delete</a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

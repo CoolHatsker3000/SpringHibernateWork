@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add new provider</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <!--<script th:src="@{/js/bootstrap.min.js}"></script>-->
+</head>
+<body>
+<h1>Add New Provider</h1>
+<div class="panel panel-success">
+    <div class="panel-heading"></div>
+    <div class="panel-body">
+        <form class="" action="#" th:action="@{/WEB-INF/html/addprovider.html}" th:object="${provider}" method="post">
+            <div class="form-group">
+                <label th:for="name">Name:</label>
+                <input class="form-control" th:field="*{name}">
+                <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="error">Name error</span>
+            </div>
+            <div class="form-group">
+                <label th:for="webSite">Web-Site:</label>
+                <input class="form-control" th:field="*{webSite}">
+            </div>
+            <div class="form-group">
+                <label th:for="phoneNumber">Phone:</label>
+                <input class="form-control" th:field="*{phoneNumber}">
+            </div>
+            <div class="form-group">
+                <label th:for="officeAddress">Office address:</label>
+                <input class="form-control" th:field="*{officeAddress}">
+            </div>
+            <input class="btn btn-success" type="submit" value="Submit"/>
+            <input class="btn btn-warning" type="reset" value="Reset"/>
+            <a href="http://localhost:8080/providers" class="btn btn-info">Back to providers list</a>
+        </form>
+    </div>
+</div>
+</body>
+</html>
